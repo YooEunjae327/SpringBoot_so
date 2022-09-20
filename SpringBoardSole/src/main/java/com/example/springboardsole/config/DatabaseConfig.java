@@ -1,4 +1,4 @@
-package com.study.config;
+package com.example.springboardsole.config;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
