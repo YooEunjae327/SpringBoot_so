@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 
 @Getter
 public class PostResponse {
-    private Long id;                        // PK
+    private Long id;                         // PK
     private String title;                   // 제목
     private String content;                 // 내용
     private String writer;                  // 작성자
