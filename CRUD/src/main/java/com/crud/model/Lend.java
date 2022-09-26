@@ -28,8 +28,11 @@ public class Lend {
     @JsonManagedReference
     private Book book;
 
-    @JsonBackReference
-    @OneToMany(mappedBy = "member", fetch =  FetchType.LAZY, cascade = CascadeType.ALL )
-    private List<Lend> lends;
+    @ManyToOne
+    @JoinColumn(name = "member_id")
+    @JsonManagedReference
+    private Member member;
+
+
 
 }
