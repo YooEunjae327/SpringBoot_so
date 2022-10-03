@@ -99,7 +99,7 @@ public class LibraryService {
         return authorRepository.save(author);
     }
 
-    public List<String> lendBook(List<BookCreationRequest> list) {
+    public List<String> lendABook(List<BookCreationRequest> list) {
         List<String> booksApprovedToBurrow = new ArrayList<>();
         list.forEach(bookCreationRequest -> {
             Optional<Book> bookForId = bookRepository.findById(bookCreationRequest.getAuthorId());
