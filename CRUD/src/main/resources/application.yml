@@ -6,6 +6,8 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create
+server:
+  port: 4000
       # create: Spring Boot가 실행되면 테이블을 지우고 새로 만듭니다. 기존에 테이블에 저장된 데이터는 삭제됩니다.
       # create-drop: Spring Boot가 종료되면 테이블을 삭제합니다.
       # update: Entity 클래스와 DB 스키마를 비교하여 DB에 생성되지 않은 테이블, 칼럼을 추가하며 제거는 하지 않습니다.

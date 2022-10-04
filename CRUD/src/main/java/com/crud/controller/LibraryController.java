@@ -1,7 +1,9 @@
 package com.crud.controller;
 
+import com.crud.model.Author;
 import com.crud.model.Book;
 import com.crud.model.Member;
+import com.crud.model.request.AuthorCreationRequest;
 import com.crud.model.request.BookCreationRequest;
 import com.crud.model.request.BookLendRequest;
 import com.crud.model.request.MemberCreationRequest;
@@ -52,8 +54,17 @@ public class LibraryController {
         return ResponseEntity.ok(libraryService.updateMember(memberId, request));
     }
 
+
     @PostMapping("/book/lend")
-    public ResponseEntity<List<String>> lendABook(@RequestBody BookLendRequest bookLendRequest) {
-        return  ResponseEntity.ok(libraryService.lendABook(bookLendRequest));
+    public ResponseEntity<List<String>> lendABook(@RequestBody BookLendRequest bookLendRequests) {
+        return ResponseEntity.ok(libraryService.lendABook((List<BookCreationRequest>) bookLendRequests));
     }
+
+    @PostMapping("/author")
+    public ResponseEntity<Author> createAuthor (@RequestBody AuthorCreationRequest request) {
+        return ResponseEntity.ok(libraryService.createAuthor(request));
+    }
+
+
+
 }
